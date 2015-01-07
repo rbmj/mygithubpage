@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <title>Useful Commands Reference</title>
+    </head>
+    <body>
+        <h1>Useful Commands Reference</h1>
+        <hr />
+        <h2>Compilation, Assembly, and Linking</h2>
+        Compile C file (32 bit executable):
+<pre><code>
+$ gcc foo.c -o foo                      # 32-bit
+$ gcc -m32 foo.c -o foo                 # 64-bit
+$ gcc -m32 -B /home/mids/m164122/libc   # Michelson Labs
+</code></pre>
+        Compile C file (32 bit executable, security features disabled):
+<pre><code>
+$ gcc -fno-stack-protector -z execstack foo.c -o foo                      # 32-bit
+$ gcc -fno-stack-protector -z execstack -m32 foo.c -o foo                 # 64-bit
+$ gcc -fno-stack-protector -z execstack -m32 -B /home/mids/m164122/libc   # Michelson Labs
+</code></pre>       
+        Assemble file (shellcode to flat binary):
+<pre><code>
+$ nasm foo.asm -o foo
+</code></pre>
+        Assemble file (assembly program to ELF object file):
+<pre><code>
+$ nasm foo.asm -o foo.o -felf
+</code></pre>
+        Link assembly code (32 bit, using C runtime, e.g. main):
+<pre><code>
+$ gcc foo.o -o foo                                    # 32 bit machine
+$ gcc -m32 foo.o -o foo                               # 64 bit machine
+$ gcc -m32 -B /home/mids/m164122/libc foo.o -o foo    # Michelson Labs
+</code></pre>
+        Link assembly code (using system calls, e.g. _start):
+<pre><code>
+$ ld foo.o -o foo
+</code></pre>
+        <h2>Disassembly/Reverse Engineering</h2>
+        Disassemble binary (ELF):
+<pre><code>
+$ objdump -d -Mintel foo &gt; foo.asm
+</code></pre>
+        Disassemble binary (flat binary):
+<pre><code>
+$ objdump -bbinary -mi386 -Mintel -D foo &gt; foo.asm
+</code></pre>
+        Show contents of binary, with load addresses:
+<pre><code>
+$ objdump -s foo &gt; foo.data
+</code></pre>
+        Check if the stack is executable:
+<pre><code>
+$ readelf -l foo       # Look at the flags field of the GNU_STACK header
+</code></pre>
+        Check executable section locations/permissions:
+<pre><code>
+$ readelf -S foo
+</code></pre>
+        Run program without ASLR (32 bit):
+<pre><code>
+$ setarch linux32 -R ./foo       # Run foo with ASLR off
+$ setarch linux32 -R /bin/bash   # Run a shell, no ASLR for child progs
+</code></pre>
+        <h2>GDB Commands</h2>
+        Set intel syntax:
+<pre><code>
+(gdb) set disassembly-flavor intel
+</code></pre>
+        Debug child processes (useful for debugging server processes):
+<pre><code>
+(gdb) set follow-fork-mode child
+</code></pre>
+        Show current instruction after each command:
+<pre><code>
+(gdb) display/i $pc
+</code></pre>
+        Step through a nop sled:
+<pre><code>
+(gdb) while *((unsigned char*)$eip) == 0x90
+&gt; nexti
+&gt; end
+</code></pre>
+        <h2>Remote Exploitation</h2>
+        Send a payload:
+<pre><code>
+$ python -c 'print "A"*1024' | nc 127.0.0.1 1337
+</code></pre>
+        Make fifo (special file, FIFO queue):
+<pre><code>
+$ mkfifo fifo
+</code></pre>
+        Use a fifo to simulate a netcat shell listener (when nc -e is
+        unsupported):
+<pre><code>
+$ /bin/sh -i &lt; fifo 2&gt;&amp;1 | nc -l 1337 &gt; fifo
+</code></pre>
+    </body>
+</html>

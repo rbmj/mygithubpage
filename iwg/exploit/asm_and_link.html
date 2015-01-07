@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Assembly Code</title>
+    </head>
+    <body>
+        <h1>Assembling and Linking HOWTO</h1>
+        <p>To assemble and link an assembly program (32 bits), use the commands:</p>
+<pre><code>
+$ nasm -felf foo.asm -o foo.o
+$ gcc -m32 foo.o -o foo
+</code></pre>
+        However, on the <b>lab machines</b> you will need to use a different command:
+<pre><code>
+$ gcc -m32 -B /home/mids/m164122/libc foo.o -o foo
+</code></pre>
+        This is a hack around the lab machines not currently having all of the packages
+        you need to link the files.  To make things more convenient, you can create an
+        alias:
+<pre><code>
+alias link32="gcc -m32 -B /home/mids/m164122/libc"
+</code></pre>
+        You can put that in your <code>~/.bashrc</code> and then open up another shell
+        so you can use this command as:
+<pre><code>
+$ link32 foo.o -o foo
+</code></pre>
+        More information will be added here later.
+    </body>
+</html>

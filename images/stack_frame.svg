@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<svg width="360" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+ <g>
+  <title>Layer 1</title>
+  <rect id="svg_15" height="167" width="265" y="34" x="52" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" stroke="#000000" fill="#ffff00"/>
+  <line id="svg_16" y2="141" x2="316" y1="142" x1="51" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" stroke="#000000" fill="none"/>
+  <line id="svg_17" y2="87.5" x2="319.5" y1="88.5" x1="54.5" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" stroke="#000000" fill="none"/>
+  <text xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" id="svg_19" y="70" x="182" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#000000" fill="#000000">argN</text>
+  <text xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" id="svg_20" y="123" x="181" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#000000" fill="#000000">arg1</text>
+  <text xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" id="svg_21" y="179" x="181" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#000000" fill="#000000">arg0</text>
+  <rect stroke="#000000" id="svg_22" height="49.000001" width="265" y="202" x="52" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#ff0000"/>
+  <text xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" id="svg_23" y="233" x="183" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#000000" fill="#000000">return address</text>
+  <rect stroke="#000000" id="svg_24" height="208.999997" width="265" y="250" x="52" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#00ffff"/>
+  <line id="svg_25" y2="302.5" x2="315.5" y1="303.5" x1="50.5" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" stroke="#000000" fill="none"/>
+  <line id="svg_26" y2="357.5" x2="318.5" y1="358.5" x1="53.5" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" stroke="#000000" fill="none"/>
+  <text xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" id="svg_27" y="337" x="180" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#000000" fill="#000000">localvar0</text>
+  <text xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" id="svg_28" y="388" x="180" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#000000" fill="#000000">localvar1</text>
+  <text xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" id="svg_29" y="440" x="179" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#000000" fill="#000000">localvar2</text>
+  <line id="svg_30" y2="406.5" x2="316.5" y1="407.5" x1="51.5" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" stroke="#000000" fill="none"/>
+  <text xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" id="svg_31" y="283" x="181" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#000000" fill="#000000">saved ebp</text>
+ </g>
+</svg>

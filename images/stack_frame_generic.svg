@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<svg width="400" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+ <g>
+  <title>Layer 1</title>
+  <rect fill="#FF0000" stroke-width="5" x="133" y="18" width="252.000003" height="345.000011" id="svg_1" stroke="#000000"/>
+  <rect stroke="#000000" fill="#ffff00" stroke-width="5" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x="133" y="107.000022" width="253" height="311.999978" id="svg_12"/>
+  <text fill="#000000" stroke="#000000" stroke-width="0" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x="259" y="46" id="svg_14" font-size="24" font-family="serif" text-anchor="middle" xml:space="preserve">Previous Stack Frames</text>
+  <rect stroke="#000000" id="svg_3" height="43.000001" width="250" y="63.999999" x="134" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#00ff0c"/>
+  <text xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" id="svg_4" y="137" x="253" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#000000" fill="#000000">saved ebp</text>
+  <text xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" id="svg_5" y="45" x="37" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#000000" fill="#000000">ebp</text>
+  <line id="svg_6" y2="39" x2="125" y1="39" x1="63" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" stroke="#000000" fill="none"/>
+  <line stroke="#000000" id="svg_7" y2="40" x2="125" y1="25" x1="113" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="none"/>
+  <line stroke="#000000" id="svg_8" y2="37.000001" x2="126" y1="51.000001" x1="111" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="none"/>
+  <text xml:space="preserve" text-anchor="middle" font-family="serif" font-size="24" id="svg_9" y="93" x="256" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#000000" fill="#000000">return address</text>
+ </g>
+</svg>
