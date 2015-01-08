@@ -1,0 +1,60 @@
+<html>
+<head>
+    <title>Stack Overflow Lesson 0</title>
+    <link rel='stylesheet' type='text/css' href='/css/simple.css' />
+</head>
+<body>
+    <h1>Stack Overflows</h1>
+    <h2>Lesson 0</h2>
+    <p>If you have issues running the executables see
+        <a href='help.html'>this page</a> for help.</p>
+    <p>The goal with all of these is to execute the <code>vuln()</code>
+    function in the binary.</p>
+    <h3>Part 0:</h3>
+    <p>Download <a href='overflow1'>overflow1</a></p>
+    <ol>
+        <li>Crash the program! (use python)</li>
+        <li>Where and why does the program segfault? (use dmesg)</li>
+        <li>What is the address of <code>vuln()</code>? (use
+            <code>objdump -d -Mintel</code></li>
+        <li>How can we cause the program to execute <code>vuln()</code>?</li>
+        <li>Generate a payload to exploit the program</li>
+        <li>Get a shell! (remember to use <code>cat payload -</code> to keep
+            standard input open so you can use the shell)</li>
+    </ol>
+    <h3>Part 1:</h3>
+    <p>Look at the disassembly of overflow1 from part 0 again.</p>
+    <ol>
+        <li>Draw a diagram of the stack frame for <code>foo()</code>.</li>
+        <li>What is the offset of the read buffer?</li>
+        <li>What is the offset of the return address?</li>
+        <li>How many bytes must we write before we get to the return
+            address?</li>
+        <li>Exploit the executable, but only write the address of
+            <code>vuln()</code> once.</li>
+    </ol>
+    <h3>Part 2:</h3>
+    <p>Now download <a href='overflow2'>overflow2</a></p>
+    <ol>
+        <li>Before looking at disassembly, use your exploit from part 1
+            on this executable.</li>
+        <li>Use <code>dmesg</code> to guess at what changed between
+            overflow1 and overflow2.</li>
+        <li>Use the disassembly to see if your suspicions were correct.</li>
+        <li>How do you need to change your payload from part 1?</li>
+        <li>Exploit the executable</li>
+    </ol>
+    <h3>Part 3:</h3>
+    <p>Now download <a href='overflow3'>overflow3</a></p>
+    <ol>
+        <li>Before looking at disassembly, use your exploit from part 1
+            on this executable.</li>
+        <li>Use <code>dmesg</code> to guess at what changed between
+            overflow1 and overflow2.  You probably won't get this
+            one...</li>
+        <li>Look at the code for <code>foo()</code> and figure out what
+            it is doing.</li>
+        <li>Come up with a payload and exploit the program.</li>
+    </ol>
+</body>
+</html>

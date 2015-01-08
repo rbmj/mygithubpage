@@ -1,0 +1,20 @@
+<html>
+<head>
+    <title>Troubleshooting Sample Executables</title>
+    <link rel='stylesheet' type='text/css' href='/css/simple.css' />
+</head>
+<body>
+Make sure you have marked the program as executable:
+<pre><code>
+$ chmod a+x some_program
+</code></pre>
+
+If you are getting 'no such file or directory' errors on
+64-bit linux (on debian or ubuntu machines):
+<pre><code>
+$ sudo dpkg --add-architecture i386
+$ sudo apt-get update
+$ sudo apt-get install libc6:i386
+</code></pre>
+</body>
+</html>
