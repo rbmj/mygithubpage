@@ -120,7 +120,7 @@ EOF
 echo '%domain\ admins ALL=(root) ALL' >> /etc/sudoers
 service winbind restart
 
-[ $CACHE -eq 1 ] && apt-get install nss-updatedb libnss-db libpam-ccreds -y
+[ $CACHE -eq 1 ] && apt-get install nss-updatedb libnss-db libpam-ccreds nscd -y
 
 set +x
 
