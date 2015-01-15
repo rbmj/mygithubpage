@@ -1,10 +1,15 @@
 #!/bin/bash
 set -e
 
+CACHE=0
 if [ $# -ne 4 ] ; then
-	echo "USAGE: $0 hostname domain dchostname username" >&2
-	echo "Example: $0 iwg-gen0 d3catur.net dc0 rbmason" >&2
-	exit 1
+	if [ $# -eq 5 ] && [ $5 = 'CACHE' ] ; then
+		CACHE=1
+	else
+		echo "USAGE: $0 hostname domain dchostname username ['CACHE']" >&2
+		echo "Example: $0 iwg-gen0 d3catur.net dc0 rbmason" >&2
+		exit 1
+	fi
 fi
 
 HOST=$1
@@ -20,7 +25,7 @@ hostname $HOST
 echo "127.0.0.1    $HOST.$DOMAIN      $HOST      localhost" > /etc/hosts
 echo "$HOST" > /etc/hostname
 
-apt-get install krb5-user libpam-krb5 winbind libpam-winbind ntp libnss-winbind -y
+apt-get install krb5-user libpam-krb5 winbind libpam-winbind ntp -y
 
 cat > /etc/ntp.conf << EOF
 driftfile /var/lib/ntp/ntp.drift
@@ -114,6 +119,8 @@ EOF
 
 echo '%domain\ admins ALL=(root) ALL' >> /etc/sudoers
 service winbind restart
+
+[ $CACHE -eq 1 ] && apt-get install nss-updatedb libnss-db libpam-ccreds -y
 
 set +x
 
