@@ -14,6 +14,8 @@ WINS=`echo $DOMAIN_UPPER | cut -d. -f1`
 DCHOSTNAME=$3
 USER=$4
 
+set -x
+
 hostname $HOST
 echo "127.0.0.1    $HOST.$DOMAIN      $HOST      localhost" > /etc/hosts
 echo "$HOST" > /etc/hostname
@@ -88,7 +90,8 @@ cat > /etc/samba/smb.conf << EOF
         restrict anonymous = 2
 EOF
 
-service winbind restart
+service winbind stop
+service winbind start
 net ads join -U $USER -W $DOMAIN_UPPER
 
 echo 'session required pam_mkhomedir.so' >> /etc/pam.d/login
@@ -110,4 +113,8 @@ netgroup:   nis
 EOF
 
 echo '%domain\ admins ALL=(root) ALL' >> /etc/sudoers
-service winbind start
+service winbind restart
+
+set +x
+
+echo SUCCESS
