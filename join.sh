@@ -25,7 +25,7 @@ hostname $HOST
 echo "127.0.0.1    $HOST.$DOMAIN      $HOST      localhost" > /etc/hosts
 echo "$HOST" > /etc/hostname
 
-apt-get install krb5-user libpam-krb5 winbind libpam-winbind ntp -y
+apt-get install krb5-user libpam-krb5 winbind libpam-winbind ntp libnss-winbind -y
 
 cat > /etc/ntp.conf << EOF
 driftfile /var/lib/ntp/ntp.drift
