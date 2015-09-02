@@ -1,0 +1,12 @@
+bulid-essential
+clang
+ghex
+strace
+ltrace
+valgrind
+strace
+ltrace
+w3af
+nmap
+netcat-openbsd
+nasm
