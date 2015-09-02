@@ -80,8 +80,9 @@ cat > /etc/samba/smb.conf << EOF
         idmap config * : backend = tdb
         idmap config * : range = 90000-99999
         # don't collide with system accounts
-        idmap config $WINS : backend = ad
+        idmap config $WINS : backend = rid
         idmap config $WINS : range = 100000-200000
+        idmap config $WINS : base_rid = 0
         winbind enum users = yes
         winbind enum groups = yes
         client use spnego = yes
@@ -91,6 +92,7 @@ cat > /etc/samba/smb.conf << EOF
         winbind use default domain = yes
         # needed to ensure users have a login shell
         template shell = /bin/bash
+        template homedir = /home/%U
         # Don't allow anonymous connections
         restrict anonymous = 2
 EOF
@@ -99,7 +101,7 @@ service winbind stop
 service winbind start
 net ads join -U $USER -W $DOMAIN_UPPER
 
-echo 'session required pam_mkhomedir.so' >> /etc/pam.d/login
+echo 'session required pam_mkhomedir.so' >> /etc/pam.d/common-session
 
 cat > /etc/nsswitch.conf << EOF
 passwd:     compat winbind
