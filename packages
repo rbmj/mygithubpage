@@ -10,3 +10,5 @@ w3af
 nmap
 netcat-openbsd
 nasm
+tmux
+screen
