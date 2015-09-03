@@ -12,3 +12,4 @@ netcat-openbsd
 nasm
 tmux
 screen
+curl
