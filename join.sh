@@ -41,7 +41,7 @@ systemctl start sssd
 
 # If not found in common-session, add pam_mkhomedir.so to pam common-session so
 # domain users will have home directories.
-grep pam_mkhomedirs.so /etc/pam.d/common-session > /dev/null && \
+grep pam_mkhomedirs.so /etc/pam.d/common-session > /dev/null || \
     echo 'session required pam_mkhomedir.so' >> /etc/pam.d/common-session
 echo "%domain\ admins@$DOMAIN ALL=(root) ALL" >> /etc/sudoers.d/admins_$DOMAIN
 
