@@ -22,7 +22,7 @@ hostname $HOST
 echo "127.0.0.1    $HOST.$DOMAIN      $HOST      localhost" > /etc/hosts
 echo "$HOST" > /etc/hostname
 
-apt-get install realmd adcli sssd libsss-sudo crudini -y
+apt-get install realmd adcli sssd libsss-sudo crudini samba-common-bin sssd-tools -y
 mkdir -p /var/lib/samba/private
 systemctl enable sssd
 
