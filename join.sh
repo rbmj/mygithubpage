@@ -7,7 +7,7 @@ if [ $# -ne 3 ] ; then
 		CACHE=1
 	else
 		echo "USAGE: $0 hostname domain username ['CACHE']" >&2
-		echo "Example: $0 iwg-gen0 d3catur.net dc0 rbmason" >&2
+		echo "Example: $0 iwg-gen0 d3catur.net rbmason" >&2
 		exit 1
 	fi
 fi
