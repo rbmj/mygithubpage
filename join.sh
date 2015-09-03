@@ -43,7 +43,10 @@ systemctl start sssd
 # domain users will have home directories.
 grep pam_mkhomedirs.so /etc/pam.d/common-session > /dev/null || \
     echo 'session required pam_mkhomedir.so' >> /etc/pam.d/common-session
-echo "%domain\ admins@$DOMAIN ALL=(root) ALL" >> /etc/sudoers.d/admins_$DOMAIN
+
+SUDO_FNAME=/etc/sudoers.d/admins_`echo $DOMAIN | cut -d. -f1`
+echo "%domain\ admins@$DOMAIN ALL=(root) ALL" >> $SUDO_FNAME
+chmod 440 $SUDO_FNAME
 
 [ $CACHE -eq 1 ] && apt-get install nss-updatedb libnss-db libpam-ccreds nscd -y
 
