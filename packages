@@ -1,4 +1,9 @@
 bulid-essential
+pkg-config
+gnuradio
+gnuradio-dev
+librtlsdr
+librtlsdr-dev
 clang
 ghex
 strace
@@ -13,3 +18,7 @@ nasm
 tmux
 screen
 curl
+wireshark
+python3
+gdb
+john
